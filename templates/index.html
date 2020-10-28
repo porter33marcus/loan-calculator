@@ -1,9 +1,41 @@
 {% extends 'base.html'%}
 
-{% block title %} Welcome to my page {% endblock %}
+{% block title %} Simple Loan Calculator {% endblock %}
 
 
 
 
 
-{% block body %} Hello Mars! {% endblock %}
+{% block body %} 
+
+Simple Loan Calculator 
+<hr>
+
+
+<form method="POST" action="/mnthlyPmt" id="calculateLoan">
+    <label for="loanAmt">Loan Amount:</label><br>
+    <input type="text" id="loanAmt" name="loanAmt" placeholder="in $USD" required autofocus>
+<br>
+<br>
+    <label for="lengthOfLoan">Length of Loan:</label><br>
+    <input type="text" id="lengthOfLoan" name="lengthOfLoan" placeholder="in years" required>
+<br>
+<br>
+    <label for="intRate">Interest Rate:</label><br>
+    <input type="text" id="intRate" name="intRate" placeholder="format in decimal - 0.05" required >
+<br>
+<br>
+    <input type="submit" value="Submit">
+
+  </form>
+
+
+  <br>
+  <br>
+
+  {% if mnthlyPmt %}
+
+    <p>Your montly payment is:  {{mnthlyPmt}}</p>
+  {% endif %}
+
+{% endblock %}
