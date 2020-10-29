@@ -14,15 +14,15 @@ Simple Loan Calculator
 
 <form method="POST" action="/mnthlyPmt" id="calculateLoan">
     <label for="loanAmt">Loan Amount:</label><br>
-    <input type="text" id="loanAmt" name="loanAmt" placeholder="in $USD" required autofocus>
+    <input type="text" id="loanAmt" name="loanAmt" placeholder="in $USD" pattern=\d{1,} required autofocus>
 <br>
 <br>
     <label for="lengthOfLoan">Length of Loan:</label><br>
-    <input type="text" id="lengthOfLoan" name="lengthOfLoan" placeholder="in years" required>
+    <input type="text" id="lengthOfLoan" name="lengthOfLoan" placeholder="in years" pattern=\d{1,} required>
 <br>
 <br>
     <label for="intRate">Interest Rate:</label><br>
-    <input type="text" id="intRate" name="intRate" placeholder="format in decimal - 0.05" required >
+    <input type="double" id="intRate" name="intRate" placeholder="format in decimal - 0.05" min="0.00" max="1.00" required >
 <br>
 <br>
     <input type="submit" value="Submit">
